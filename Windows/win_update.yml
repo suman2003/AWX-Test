@@ -17,9 +17,6 @@
          -SecurityUpdates
          -CriticalUpdates
          -UpdateRollups
-       state: installed
-       log_path: e:\ansible_wu_log.txt
-       register: update_result
-       win_reboot:
-           when: updateresult.reboot_required
-           log_path: e:\ansible_search_wu.txt  
+       #state: installed
+       log_path: e:\ansible_wu.txt
+       reboot: yes 
