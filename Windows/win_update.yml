@@ -17,6 +17,6 @@
          -SecurityUpdates
          -CriticalUpdates
          -UpdateRollups
-       #state: installed
+       state: installed
        log_path: e:\ansible_wu.txt
        reboot: yes 
