@@ -1,0 +1,13 @@
+- name: Search-only, return list of found updates (if any), log to e:\ansible_wu.txt
+  win_updates:
+    category_names: SecurityUpdates
+    state: searched
+    log_path: e:\ansible_search_wu.txt
+    
+- name: Install all security, critical, and rollup updates
+  win_updates:
+    category_names:
+      - SecurityUpdates
+      - CriticalUpdates
+      - UpdateRollups
+    log_path: e:\ansible_wu.txt
