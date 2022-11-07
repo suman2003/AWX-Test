@@ -1,5 +1,5 @@
 ---
-- hosts: win
+- hosts: 10.73.38.117
   tasks:
    - name: Ping Windows Hosts
      win_ping:
