@@ -1,9 +1,8 @@
 ---
-- hosts: 10.73.38.117
+- hosts: all
+  gather_facts: no
   tasks:
-   - name: Ping Windows Hosts
-     win_ping:
-   - name: Search-only, return list of found updates (if any), log to e:\ansible_search_wu.txt
+  - name: Search-only, return list of found updates (if any), log to e:\ansible_search_wu.txt
      win_updates:
        category_names: 
          -SecurityUpdates
@@ -11,12 +10,13 @@
          -UpdateRollups
        state: searched
        log_path: e:\ansible_search_wu.txt
+       
    - name: Install all critical and security updates, log to e:\ansible_wu.txt
      win_updates:
        category_names: 
          -SecurityUpdates
          -CriticalUpdates
          -UpdateRollups
-       state: installed
        log_path: e:\ansible_wu.txt
+       state: installed
        reboot: yes 
