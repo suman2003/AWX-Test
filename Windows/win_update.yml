@@ -2,8 +2,8 @@
   win_updates:
     category_names: SecurityUpdates
     state: searched
-    log_path: e:\ansible_search_wu.txt
-    
+    log_path: e:\ansible_search_wu_log.txt
+        
 - name: Install all security, critical, and rollup updates
   win_updates:
     category_names:
