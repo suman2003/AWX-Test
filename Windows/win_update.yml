@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
    - name: Search-only, return list of found updates (if any), log to e:\ansible_search_wu.txt
-     win_updates:
+     ansible.windows.win_updates:
        category_names: 
          -SecurityUpdates
          -CriticalUpdates
@@ -12,7 +12,7 @@
        log_path: e:\ansible_search_wu.txt
        
    - name: Install all critical and security updates, log to e:\ansible_wu.txt
-     win_updates:
+     ansible.windows.win_updates:
        state: installed
        category_names: 
          -SecurityUpdates
