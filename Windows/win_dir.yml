@@ -1,5 +1,5 @@
 ---
-- hosts: 
+- hosts: win-oulu
   tasks:
    - name: Touch a file (creates if not present, updates modification time if present)
      ansible.windows.win_file:
