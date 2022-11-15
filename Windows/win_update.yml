@@ -13,10 +13,11 @@
        
    - name: Install all critical and security updates, log to e:\ansible_wu.txt
      win_updates:
+       state: installed
        category_names: 
          -SecurityUpdates
          -CriticalUpdates
          -UpdateRollups
        log_path: e:\ansible_wu.txt
-       state: installed
-       reboot: yes 
+       reboot: yes
+       reboot_timeout: 600
